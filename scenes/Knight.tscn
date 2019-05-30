@@ -1,0 +1,101 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scripts/Knight.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Knight/s_knight_walk1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Knight/s_knight_walk2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Knight/s_knight_walk3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Knight/s_knight_walk4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Knight/s_knight_hitstun.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Knight/s_knight_attack1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Knight/s_knight_attack2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Knight/s_knight_attack3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Knight/s_knight_attack4.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Knight/s_knight_attack5.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Knight/s_knight_attack6.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Knight/s_knight_attack7.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Knight/s_knight_attack8.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Knight/s_knight_attack9.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Knight/s_knight_attack10.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Knight/s_knight_attack11.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Knight/s_knight_attack12.png" type="Texture" id=18]
+[ext_resource path="res://scripts/Attack.gd" type="Script" id=19]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7, 15 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "knockback",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "attack",
+"speed": 8.0
+} ]
+
+[node name="Knight" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 4
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+life = 200
+speed = 20
+attack_range = 42
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 2, -15 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Pivot" type="Position2D" parent="." index="1"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Pivot" index="0"]
+
+frames = SubResource( 2 )
+animation = "walk"
+frame = 3
+playing = true
+centered = false
+offset = Vector2( -20, -48 )
+
+[node name="Attack" type="Area2D" parent="Pivot" index="1"]
+
+position = Vector2( 24, -21 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 19 )
+_sections_unfolded = [ "Collision", "Transform" ]
+strength = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attack" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -14, 6, -12, 7, -3, 9, 3, 10, 5, 10, 10, 9, 13, 8, 15, 7, 15, 4, 12, 1, 11, 0, 8, -2, -2, -6, -12, -9, -14, -9 )
+
+[connection signal="animation_finished" from="Pivot/AnimatedSprite" to="." method="on_animation_finished"]
+
+

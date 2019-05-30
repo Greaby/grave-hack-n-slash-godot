@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Skeleton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Environment/s_wall.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Knight.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.3213, 16.3637 )
+
+[node name="graveyard" type="Node2D"]
+
+[node name="Skeleton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 99.394, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="Skeleton"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2( 291.866, 0 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+shape = SubResource( 1 )
+
+[node name="Knight" parent="." instance=ExtResource( 3 )]
+position = Vector2( -42.7064, 0 )
