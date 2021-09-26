@@ -12,3 +12,6 @@ func physics_process(_delta: float) -> void:
 	if owner.hit:
 		_state_machine.transition_to("Knockback")
 		return
+	
+	var input_direction = (Global.skeleton.position - owner.position).normalized()
+	owner.pivot.scale.x = input_direction.x

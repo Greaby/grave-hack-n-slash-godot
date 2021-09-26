@@ -5,6 +5,10 @@ func enter(_msg: Dictionary = {}) -> void:
 
 
 func physics_process(_delta: float) -> void:
+	if(owner.hit):
+		_state_machine.transition_to("Knockback")
+		return
+	
 	if(Input.is_action_just_pressed("roll")):
 		_state_machine.transition_to("Roll")
 		return

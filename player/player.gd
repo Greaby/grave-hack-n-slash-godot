@@ -3,7 +3,9 @@ extends KinematicBody2D
 export (int) var life
 export (int) var speed = 400
 
-var input_direction = Vector2()
+var input_direction := Vector2()
+var hit = false
+var hit_direction := Vector2()
 
 onready var animated_sprite = $Pivot/AnimatedSprite
 onready var pivot = $Pivot
@@ -24,7 +26,11 @@ func _physics_process(delta: float) -> void:
 	input_direction.x = (int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")))
 
 
-func damage(amount) -> void:
+func damage(amount, hit_position) -> void:
+	hit = true
+	
+	hit_direction = Vector2(hit_position - global_position.x, 0).normalized() * -1
+	
 	life -= amount
 	if life <= 0:
 		queue_free()

@@ -1,0 +1,100 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://scripts/Attack.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/Knight/s_knight_idle2.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Knight/s_knight_idle1.png" type="Texture" id=3]
+[ext_resource path="res://ennemies/knight/states/knockback.gd" type="Script" id=4]
+[ext_resource path="res://ennemies/knight/states/idle.gd" type="Script" id=5]
+[ext_resource path="res://classes/state-machine/state_machine.gd" type="Script" id=6]
+[ext_resource path="res://ennemies/knight.gd" type="Script" id=7]
+[ext_resource path="res://ennemies/knight/states/chase.gd" type="Script" id=8]
+[ext_resource path="res://ennemies/knight/states/attack.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack7.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack11.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack12.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/Knight/s_knight_idle3.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack3.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack5.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack4.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack10.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/Knight/s_knight_hitstun.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk2.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack6.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack9.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk3.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk4.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack1.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack8.png" type="Texture" id=27]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 15 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "knockback",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="Knight" type="KinematicBody2D"]
+scale = Vector2( 4, 4 )
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 7 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 6 )
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Knockback" type="Node" parent="StateMachine"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, -15 )
+shape = SubResource( 1 )
+
+[node name="Pivot" type="Position2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Pivot"]
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+centered = false
+offset = Vector2( -20, -48 )
+
+[node name="Attack" type="Area2D" parent="Pivot"]
+position = Vector2( 24, -21 )
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+strength = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attack"]
+polygon = PoolVector2Array( -14, 6, -12, 7, -3, 9, 3, 10, 5, 10, 10, 9, 13, 8, 15, 7, 15, 4, 12, 1, 11, 0, 8, -2, -2, -6, -12, -9, -14, -9 )

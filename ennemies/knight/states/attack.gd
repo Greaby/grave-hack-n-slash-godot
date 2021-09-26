@@ -23,7 +23,7 @@ func physics_process(_delta: float) -> void:
 	if attack_finished:
 		_state_machine.transition_to("Idle")
 		return
-		
+
 	if(owner.animated_sprite.frame == 4):
 		owner.attack.attack()
 	if(owner.animated_sprite.frame == 6):

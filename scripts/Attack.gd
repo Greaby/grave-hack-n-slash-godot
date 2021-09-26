@@ -38,4 +38,4 @@ func _physics_process(delta):
 	for body in bodies:
 		if not (stricken.has(body)):
 			stricken.append(body)
-			body.damage(strength)
+			body.damage(strength, global_position.x)

@@ -16,7 +16,7 @@ func play_animation(name: String) -> void:
 	animated_sprite.play(name)
 
 
-func damage(amount):
+func damage(amount, _position):
 	hit = true
 	life -= amount
 	if(life <= 0):

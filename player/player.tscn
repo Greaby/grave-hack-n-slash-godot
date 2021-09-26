@@ -1,0 +1,161 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://scripts/Attack.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_hitstun.png" type="Texture" id=2]
+[ext_resource path="res://player/player.gd" type="Script" id=3]
+[ext_resource path="res://player/states/idle.gd" type="Script" id=4]
+[ext_resource path="res://player/states/attack_three.gd" type="Script" id=5]
+[ext_resource path="res://player/states/attack_one.gd" type="Script" id=6]
+[ext_resource path="res://classes/state-machine/state_machine.gd" type="Script" id=7]
+[ext_resource path="res://player/states/attack_two.gd" type="Script" id=8]
+[ext_resource path="res://player/states/move.gd" type="Script" id=9]
+[ext_resource path="res://player/states/knockback.gd" type="Script" id=10]
+[ext_resource path="res://player/states/roll.gd" type="Script" id=11]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two4.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one4.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll5.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three4.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_idle1.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two3.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll4.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three1.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two2.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one2.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run3.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three5.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two5.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run1.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run6.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one1.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_idle2.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll6.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run4.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_idle3.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one5.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three6.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll2.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run5.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one3.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll3.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two1.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll7.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three2.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three3.png" type="Texture" id=43]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 15 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 30 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "knockback",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "move",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "attack_two",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 41 ) ],
+"loop": false,
+"name": "roll",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 34 ) ],
+"loop": false,
+"name": "attack_one",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 35 ) ],
+"loop": false,
+"name": "attack_three",
+"speed": 8.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 4, 4 )
+collision_mask = 4
+script = ExtResource( 3 )
+life = 100
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 7 )
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 4 )
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Roll" type="Node" parent="StateMachine"]
+script = ExtResource( 11 )
+
+[node name="AttackOne" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="AttackTwo" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="AttackThree" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Knockback" type="Node" parent="StateMachine"]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -15 )
+shape = SubResource( 1 )
+
+[node name="Pivot" type="Position2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Pivot"]
+frames = SubResource( 2 )
+animation = "knockback"
+centered = false
+offset = Vector2( -24, -48 )
+
+[node name="Attacks" type="Node2D" parent="Pivot"]
+
+[node name="AttackOne" type="Area2D" parent="Pivot/Attacks"]
+position = Vector2( 24, -17 )
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+strength = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackOne"]
+polygon = PoolVector2Array( -16, -11, -6, -9, 4, -5, 15, 2, 16, 4, 16, 7, 10, 10, 1, 10, -11, 7, -16, 5 )
+
+[node name="AttackTwo" type="Area2D" parent="Pivot/Attacks"]
+position = Vector2( 30, -20 )
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+strength = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackTwo"]
+polygon = PoolVector2Array( -36, -12, -27, -15, -10, -15, 2, -11, 10, -7, 15, -2, 17, 1, 19, 6, 21, 11, 21, 14, 18, 15, 8, 15, 3, 14, 3, 11, 6, 7, 2, -1, -3, -5, -11, -9, -20, -11, -36, -11 )
+
+[node name="AttackThree" type="Area2D" parent="Pivot/Attacks"]
+position = Vector2( 39, -15 )
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+strength = 20
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackThree"]
+polygon = PoolVector2Array( -27, 0, -25, -1, 26, -1, 28, 1, 23, 2, 10, 3, -10, 3, -27, 1 )
