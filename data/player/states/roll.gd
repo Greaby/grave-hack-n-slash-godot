@@ -1,6 +1,6 @@
 extends State
 
-const ROLL_SPEED = 150
+const ROLL_SPEED = 600
 
 var roll_direction = 0
 var roll_finished = false

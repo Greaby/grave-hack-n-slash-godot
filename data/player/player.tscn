@@ -79,6 +79,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 4, 4 )
 collision_mask = 4
 script = ExtResource( 1 )
 life = 100
@@ -148,5 +149,3 @@ strength = 20
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackThree"]
 polygon = PoolVector2Array( -27, 0, -25, -1, 26, -1, 28, 1, 23, 2, 10, 3, -10, 3, -27, 1 )
-
-[connection signal="animation_finished" from="Pivot/AnimatedSprite" to="." method="on_animation_finished"]

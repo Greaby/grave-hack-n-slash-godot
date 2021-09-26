@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var life
-export (int) var speed = 100
+export (int) var speed = 400
 
 var input_direction = Vector2()
 

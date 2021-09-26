@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://data/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/Environment/s_wall.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Knight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://data/ennemies/knight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://data/ui/camera_smoothing.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.3213, 16.3637 )
@@ -11,12 +12,21 @@ extents = Vector2( 16.3213, 16.3637 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 99.394, 0 )
+life = 10
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Anchor" type="Position2D" parent="."]
+position = Vector2( 100, 0 )
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="Anchor"]
 current = true
-zoom = Vector2( 0.25, 0.25 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 
 [node name="Walls" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Wall" type="StaticBody2D" parent="Walls"]
 position = Vector2( 291.866, 0 )
@@ -32,4 +42,4 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Knight" parent="." instance=ExtResource( 3 )]
-position = Vector2( -42.7064, 0 )
+position = Vector2( -500, 0 )
