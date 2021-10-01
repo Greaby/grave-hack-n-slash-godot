@@ -9,7 +9,7 @@ func enter(_msg: Dictionary = {}) -> void:
 	owner.play_animation("knockback")
 
 	knockback_force = KNOCKBACK_SPEED
-	knockback_direction = (Global.skeleton.position - owner.position).normalized() * -1
+	knockback_direction = (Global.player.position - owner.position).normalized() * -1
 
 
 func exit() -> void:

@@ -5,7 +5,7 @@ func enter(_msg: Dictionary = {}) -> void:
 
 
 func physics_process(_delta: float) -> void:
-	if is_instance_valid(Global.skeleton):
+	if is_instance_valid(Global.player):
 		_state_machine.transition_to("Chase")
 		return
 
@@ -13,5 +13,5 @@ func physics_process(_delta: float) -> void:
 		_state_machine.transition_to("Knockback")
 		return
 	
-	var input_direction = (Global.skeleton.position - owner.position).normalized()
+	var input_direction = (Global.player.position - owner.position).normalized()
 	owner.pivot.scale.x = input_direction.x

@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal hit
+
 export (int) var life
 export (int) var speed = 400
 
@@ -14,7 +16,7 @@ onready var attack_two = $Pivot/Attacks/AttackTwo
 onready var attack_three = $Pivot/Attacks/AttackThree
 
 func _ready() -> void:
-	Global.skeleton = self
+	Global.player = self
 
 
 func play_animation(name: String) -> void:
@@ -32,5 +34,6 @@ func damage(amount, hit_position) -> void:
 	hit_direction = Vector2(hit_position - global_position.x, 0).normalized() * -1
 	
 	life -= amount
+	emit_signal("hit", life)
 	if life <= 0:
 		queue_free()

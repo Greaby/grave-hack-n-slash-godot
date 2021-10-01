@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal die
+
 export (int) var life = 100
 export (int) var speed = 80
 export (int) var attack_range = 168
@@ -20,4 +22,5 @@ func damage(amount, _position):
 	hit = true
 	life -= amount
 	if(life <= 0):
+		emit_signal("die")
 		queue_free()

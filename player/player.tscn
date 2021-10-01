@@ -59,6 +59,11 @@ animations = [ {
 "name": "knockback",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 19 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 41 ) ],
+"loop": false,
+"name": "roll",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 27 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "move",
@@ -69,19 +74,14 @@ animations = [ {
 "name": "attack_two",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 41 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 35 ) ],
 "loop": false,
-"name": "roll",
+"name": "attack_three",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 34 ) ],
 "loop": false,
 "name": "attack_one",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 35 ) ],
-"loop": false,
-"name": "attack_three",
 "speed": 8.0
 } ]
 

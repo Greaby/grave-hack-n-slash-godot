@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ennemies/knight.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://environment/grave.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/fence.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/Environment/s_graves.png" type="Texture" id=8]
+[ext_resource path="res://ui/hud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://main.gd" type="Script" id=10]
 
 [node name="graveyard" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -115,3 +118,5 @@ position = Vector2( -2155, 0 )
 
 [node name="Grave11" parent="decorations" instance=ExtResource( 6 )]
 position = Vector2( -2063, 0 )
+
+[node name="HUD" parent="." instance=ExtResource( 9 )]
