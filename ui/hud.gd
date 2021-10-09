@@ -9,7 +9,8 @@ onready var levelLabel = $HBoxContainer/Level
 
 
 func _ready() -> void:
-	Global.connect("kills_changed", self, "update_kills")
+	Global.connect("kills_changed", self, "on_kills_changed")
+	Global.connect("level_changed", self, "on_level_changed")
 	Global.player.connect("hit", self, "update_health")
 
 
@@ -18,9 +19,9 @@ func update_health(value) -> void:
 	tween.start()
 
 
-func update_kills(value) -> void:
+func on_kills_changed(value) -> void:
 	killsLabel.text = "Kills : " + str(value)
 
 
-func update_level(value) -> void:
-	levelLabel.text = "Level : " + str(value)
+func on_level_changed() -> void:
+	levelLabel.text = "Level : " + str(Global.level)

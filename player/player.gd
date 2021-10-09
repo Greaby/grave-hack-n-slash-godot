@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 signal hit
+signal level_up
+
 
 export (int) var life
 export (int) var speed = 400

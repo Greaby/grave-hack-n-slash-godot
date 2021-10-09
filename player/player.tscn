@@ -54,21 +54,6 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "knockback",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 41 ) ],
-"loop": false,
-"name": "roll",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "move",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 40 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "attack_two",
@@ -79,13 +64,30 @@ animations = [ {
 "name": "attack_three",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "knockback",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 34 ) ],
 "loop": false,
 "name": "attack_one",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 41 ) ],
+"loop": false,
+"name": "roll",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "move",
+"speed": 8.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 scale = Vector2( 4, 4 )
 collision_mask = 4
 script = ExtResource( 3 )
