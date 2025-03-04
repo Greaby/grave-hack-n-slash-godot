@@ -1,32 +1,32 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/Attack.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/Knight/s_knight_idle2.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/Knight/s_knight_idle1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Knight/s_knight_idle2.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/sprites/Knight/s_knight_idle1.png" type="Texture2D" id=3]
 [ext_resource path="res://ennemies/knight/states/knockback.gd" type="Script" id=4]
 [ext_resource path="res://ennemies/knight/states/idle.gd" type="Script" id=5]
 [ext_resource path="res://classes/state-machine/state_machine.gd" type="Script" id=6]
 [ext_resource path="res://ennemies/knight/knight.gd" type="Script" id=7]
 [ext_resource path="res://ennemies/knight/states/chase.gd" type="Script" id=8]
 [ext_resource path="res://ennemies/knight/states/attack.gd" type="Script" id=9]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack7.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack11.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack12.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/Knight/s_knight_idle3.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/Knight/s_knight_walk1.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack3.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack5.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack4.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack10.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/Knight/s_knight_hitstun.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack2.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/Knight/s_knight_walk2.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack6.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack9.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/Knight/s_knight_walk3.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/Knight/s_knight_walk4.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack1.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprites/Knight/s_knight_attack8.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack7.png" type="Texture2D" id=10]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack11.png" type="Texture2D" id=11]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack12.png" type="Texture2D" id=12]
+[ext_resource path="res://assets/sprites/Knight/s_knight_idle3.png" type="Texture2D" id=13]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk1.png" type="Texture2D" id=14]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack3.png" type="Texture2D" id=15]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack5.png" type="Texture2D" id=16]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack4.png" type="Texture2D" id=17]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack10.png" type="Texture2D" id=18]
+[ext_resource path="res://assets/sprites/Knight/s_knight_hitstun.png" type="Texture2D" id=19]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack2.png" type="Texture2D" id=20]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk2.png" type="Texture2D" id=21]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack6.png" type="Texture2D" id=22]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack9.png" type="Texture2D" id=23]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk3.png" type="Texture2D" id=24]
+[ext_resource path="res://assets/sprites/Knight/s_knight_walk4.png" type="Texture2D" id=25]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack1.png" type="Texture2D" id=26]
+[ext_resource path="res://assets/sprites/Knight/s_knight_attack8.png" type="Texture2D" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 15 )
@@ -54,7 +54,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Knight" type="KinematicBody2D"]
+[node name="Knight" type="CharacterBody2D"]
 scale = Vector2( 4, 4 )
 collision_layer = 2
 collision_mask = 4
@@ -80,12 +80,12 @@ script = ExtResource( 4 )
 position = Vector2( 2, -15 )
 shape = SubResource( 1 )
 
-[node name="Pivot" type="Position2D" parent="."]
+[node name="Pivot" type="Marker2D" parent="."]
 
-[node name="Center" type="Position2D" parent="Pivot"]
+[node name="Center" type="Marker2D" parent="Pivot"]
 position = Vector2( 3, -20 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pivot"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
 frames = SubResource( 2 )
 animation = "idle"
 frame = 2
@@ -101,4 +101,4 @@ script = ExtResource( 1 )
 strength = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attack"]
-polygon = PoolVector2Array( -14, 6, -12, 7, -3, 9, 3, 10, 5, 10, 10, 9, 13, 8, 15, 7, 15, 4, 12, 1, 11, 0, 8, -2, -2, -6, -12, -9, -14, -9 )
+polygon = PackedVector2Array( -14, 6, -12, 7, -3, 9, 3, 10, 5, 10, 10, 9, 13, 8, 15, 7, 15, 4, 12, 1, 11, 0, 8, -2, -2, -6, -12, -9, -14, -9 )

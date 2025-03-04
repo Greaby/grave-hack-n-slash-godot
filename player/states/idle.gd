@@ -5,7 +5,7 @@ func enter(_msg: Dictionary = {}) -> void:
 
 
 func physics_process(_delta: float) -> void:
-	if(owner.hit):
+	if(owner.is_hit):
 		_state_machine.transition_to("Knockback")
 		return
 	

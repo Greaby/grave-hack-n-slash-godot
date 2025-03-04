@@ -8,7 +8,7 @@ var velocity := Vector2()
 
 
 func _ready() -> void:
-	velocity = Vector2(rand_range(-1.0, 1.0), rand_range(-1.0, 0.2))
+	velocity = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 0.2))
 
 
 func _physics_process(delta: float) -> void:

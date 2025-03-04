@@ -1,163 +1,261 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=46 format=3 uid="uid://ssrm0ij84cha"]
 
-[ext_resource path="res://scripts/Attack.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_hitstun.png" type="Texture" id=2]
-[ext_resource path="res://player/player.gd" type="Script" id=3]
-[ext_resource path="res://player/states/idle.gd" type="Script" id=4]
-[ext_resource path="res://player/states/attack_three.gd" type="Script" id=5]
-[ext_resource path="res://player/states/attack_one.gd" type="Script" id=6]
-[ext_resource path="res://classes/state-machine/state_machine.gd" type="Script" id=7]
-[ext_resource path="res://player/states/attack_two.gd" type="Script" id=8]
-[ext_resource path="res://player/states/move.gd" type="Script" id=9]
-[ext_resource path="res://player/states/knockback.gd" type="Script" id=10]
-[ext_resource path="res://player/states/roll.gd" type="Script" id=11]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two4.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one4.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll5.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three4.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_idle1.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two3.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll1.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll4.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three1.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two2.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one2.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run3.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three5.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two5.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run1.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run6.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one1.png" type="Texture" id=29]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_idle2.png" type="Texture" id=30]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll6.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run4.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_idle3.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one5.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three6.png" type="Texture" id=35]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll2.png" type="Texture" id=36]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_run5.png" type="Texture" id=37]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_one3.png" type="Texture" id=38]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll3.png" type="Texture" id=39]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_two1.png" type="Texture" id=40]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_roll7.png" type="Texture" id=41]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three2.png" type="Texture" id=42]
-[ext_resource path="res://assets/sprites/Skeleton/s_skeleton_attack_three3.png" type="Texture" id=43]
+[ext_resource type="Script" uid="uid://do5htj2jdd7r6" path="res://scripts/Attack.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bpnt42ngcuoce" path="res://assets/sprites/Skeleton/s_skeleton_hitstun.png" id="2"]
+[ext_resource type="Script" uid="uid://c7urmqxhvoohv" path="res://player/player.gd" id="3"]
+[ext_resource type="Script" uid="uid://36s8n350k57w" path="res://player/states/idle.gd" id="4"]
+[ext_resource type="Script" uid="uid://dd8klvffrsi4p" path="res://player/states/attack_three.gd" id="5"]
+[ext_resource type="Script" uid="uid://c0cslwp3hcwm0" path="res://player/states/attack_one.gd" id="6"]
+[ext_resource type="Script" uid="uid://bkiw3mvkl0irs" path="res://classes/state-machine/state_machine.gd" id="7"]
+[ext_resource type="Script" uid="uid://dykmeenpih561" path="res://player/states/attack_two.gd" id="8"]
+[ext_resource type="Script" uid="uid://rivvw5u47f7m" path="res://player/states/move.gd" id="9"]
+[ext_resource type="Script" uid="uid://k254fuoyrlnv" path="res://player/states/knockback.gd" id="10"]
+[ext_resource type="Script" uid="uid://ctvpksctf50rx" path="res://player/states/roll.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://utajofp0ilfc" path="res://assets/sprites/Skeleton/s_skeleton_attack_two4.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://d3knf6r8l0fyq" path="res://assets/sprites/Skeleton/s_skeleton_attack_one4.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bsnpgygweghi6" path="res://assets/sprites/Skeleton/s_skeleton_run2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://daiadjtukjy62" path="res://assets/sprites/Skeleton/s_skeleton_roll5.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dxghk4evx34dr" path="res://assets/sprites/Skeleton/s_skeleton_attack_three4.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cxbkcw5j4labv" path="res://assets/sprites/Skeleton/s_skeleton_idle1.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bopjwaarb1b61" path="res://assets/sprites/Skeleton/s_skeleton_attack_two3.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://nfchas8ydqrw" path="res://assets/sprites/Skeleton/s_skeleton_roll1.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cnkngirqfdm06" path="res://assets/sprites/Skeleton/s_skeleton_roll4.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bnixf3i21nq02" path="res://assets/sprites/Skeleton/s_skeleton_attack_three1.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cxoblhhn3xbw1" path="res://assets/sprites/Skeleton/s_skeleton_attack_two2.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://c820gg0u7f1p1" path="res://assets/sprites/Skeleton/s_skeleton_attack_one2.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://d1ngniu6tc0y3" path="res://assets/sprites/Skeleton/s_skeleton_run3.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://cwfutitutahu1" path="res://assets/sprites/Skeleton/s_skeleton_attack_three5.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://e5ohu35eauat" path="res://assets/sprites/Skeleton/s_skeleton_attack_two5.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://k4rut1j30hv6" path="res://assets/sprites/Skeleton/s_skeleton_run1.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://it2bwtnpj2bt" path="res://assets/sprites/Skeleton/s_skeleton_run6.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://crloyid7m1jeh" path="res://assets/sprites/Skeleton/s_skeleton_attack_one1.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://dydyug33w30me" path="res://assets/sprites/Skeleton/s_skeleton_idle2.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://bo8ah5372faoy" path="res://assets/sprites/Skeleton/s_skeleton_roll6.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://cwxuv7lxovprx" path="res://assets/sprites/Skeleton/s_skeleton_run4.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://27s173s741h1" path="res://assets/sprites/Skeleton/s_skeleton_idle3.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://cpb3yrfginjvl" path="res://assets/sprites/Skeleton/s_skeleton_attack_one5.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://ctsiugt5sgkjl" path="res://assets/sprites/Skeleton/s_skeleton_attack_three6.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://bhy1ps8wr7jmv" path="res://assets/sprites/Skeleton/s_skeleton_roll2.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://b5p6qu21ldkhd" path="res://assets/sprites/Skeleton/s_skeleton_run5.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://dmjk34qofrmlf" path="res://assets/sprites/Skeleton/s_skeleton_attack_one3.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://bjqcbjkgupoir" path="res://assets/sprites/Skeleton/s_skeleton_roll3.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://bpok50pu3ajbb" path="res://assets/sprites/Skeleton/s_skeleton_attack_two1.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://bxdf00nvtnvk4" path="res://assets/sprites/Skeleton/s_skeleton_roll7.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://55s1q6axicsn" path="res://assets/sprites/Skeleton/s_skeleton_attack_three2.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://cptuolunwm7i" path="res://assets/sprites/Skeleton/s_skeleton_attack_three3.png" id="43"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 15 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(14, 30)
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 30 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "idle",
-"speed": 8.0
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29")
 }, {
-"frames": [ ExtResource( 40 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 26 ) ],
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}],
 "loop": false,
-"name": "attack_two",
+"name": &"attack_one",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 35 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}],
 "loop": false,
-"name": "attack_three",
+"name": &"attack_three",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": false,
+"name": &"attack_two",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}],
 "loop": true,
-"name": "knockback",
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"knockback",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 23 ), ExtResource( 38 ), ExtResource( 13 ), ExtResource( 34 ) ],
-"loop": false,
-"name": "attack_one",
-"speed": 8.0
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 41 ) ],
-"loop": false,
-"name": "roll",
-"speed": 8.0
+"duration": 1.0,
+"texture": ExtResource("14")
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 28 ) ],
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}],
 "loop": true,
-"name": "move",
+"name": &"move",
 "speed": 8.0
-} ]
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}],
+"loop": false,
+"name": &"roll",
+"speed": 8.0
+}]
 
-[node name="Player" type="KinematicBody2D" groups=[
-"player",
-]]
-scale = Vector2( 4, 4 )
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+texture_filter = 1
+scale = Vector2(4, 4)
 collision_mask = 4
-script = ExtResource( 3 )
+script = ExtResource("3")
 life = 100
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 7 )
+script = ExtResource("7")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="Move" type="Node" parent="StateMachine"]
-script = ExtResource( 9 )
+script = ExtResource("9")
 
 [node name="Roll" type="Node" parent="StateMachine"]
-script = ExtResource( 11 )
+script = ExtResource("11")
 
 [node name="AttackOne" type="Node" parent="StateMachine"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="AttackTwo" type="Node" parent="StateMachine"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 
 [node name="AttackThree" type="Node" parent="StateMachine"]
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="Knockback" type="Node" parent="StateMachine"]
-script = ExtResource( 10 )
+script = ExtResource("10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -15 )
-shape = SubResource( 1 )
+position = Vector2(0, -15)
+shape = SubResource("1")
 
-[node name="Pivot" type="Position2D" parent="."]
+[node name="Pivot" type="Marker2D" parent="."]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Pivot"]
-frames = SubResource( 2 )
-animation = "knockback"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
+sprite_frames = SubResource("2")
+animation = &"knockback"
 centered = false
-offset = Vector2( -24, -48 )
+offset = Vector2(-24, -48)
 
 [node name="Attacks" type="Node2D" parent="Pivot"]
 
 [node name="AttackOne" type="Area2D" parent="Pivot/Attacks"]
-position = Vector2( 24, -17 )
+position = Vector2(24, -17)
 collision_layer = 8
 collision_mask = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 strength = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackOne"]
-polygon = PoolVector2Array( -16, -11, -6, -9, 4, -5, 15, 2, 16, 4, 16, 7, 10, 10, 1, 10, -11, 7, -16, 5 )
+polygon = PackedVector2Array(-16, -11, -6, -9, 4, -5, 15, 2, 16, 4, 16, 7, 10, 10, 1, 10, -11, 7, -16, 5)
 
 [node name="AttackTwo" type="Area2D" parent="Pivot/Attacks"]
-position = Vector2( 30, -20 )
+position = Vector2(30, -20)
 collision_layer = 8
 collision_mask = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 strength = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackTwo"]
-polygon = PoolVector2Array( -36, -12, -27, -15, -10, -15, 2, -11, 10, -7, 15, -2, 17, 1, 19, 6, 21, 11, 21, 14, 18, 15, 8, 15, 3, 14, 3, 11, 6, 7, 2, -1, -3, -5, -11, -9, -20, -11, -36, -11 )
+polygon = PackedVector2Array(-36, -12, -27, -15, -10, -15, 2, -11, 10, -7, 15, -2, 17, 1, 19, 6, 21, 11, 21, 14, 18, 15, 8, 15, 3, 14, 3, 11, 6, 7, 2, -1, -3, -5, -11, -9, -20, -11, -36, -11)
 
 [node name="AttackThree" type="Area2D" parent="Pivot/Attacks"]
-position = Vector2( 39, -15 )
+position = Vector2(39, -15)
 collision_layer = 8
 collision_mask = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 strength = 20
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Attacks/AttackThree"]
-polygon = PoolVector2Array( -27, 0, -25, -1, 26, -1, 28, 1, 23, 2, 10, 3, -10, 3, -27, 1 )
+polygon = PackedVector2Array(-27, 0, -25, -1, 26, -1, 28, 1, 23, 2, 10, 3, -10, 3, -27, 1)

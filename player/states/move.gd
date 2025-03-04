@@ -5,7 +5,7 @@ func enter(_msg: Dictionary = {}) -> void:
 
 
 func physics_process(_delta: float) -> void:
-	if(owner.hit):
+	if(owner.is_hit):
 		_state_machine.transition_to("Knockback")
 		return
 	
@@ -24,4 +24,6 @@ func physics_process(_delta: float) -> void:
 	if(owner.input_direction.x):
 		owner.pivot.scale.x = owner.input_direction.normalized().x
 
-	owner.move_and_slide(owner.input_direction * owner.speed, Vector2.UP)
+	owner.set_velocity(owner.input_direction * owner.speed)
+	owner.set_up_direction(Vector2.UP)
+	owner.move_and_slide()

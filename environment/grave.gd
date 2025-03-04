@@ -3,7 +3,7 @@ extends Node2D
 const rect_positions = [0, 16, 32]
 
 
-onready var sprite = $Sprite
+@onready var sprite = $Sprite2D
 
 
 func _ready() -> void:

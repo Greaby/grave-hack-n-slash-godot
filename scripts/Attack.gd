@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var strength
+@export var strength: int
 
 enum STATES { IDLE, ATTACK}
 
@@ -27,7 +27,7 @@ func _change_state(new_state):
 	
 	state = new_state
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if(state == STATES.IDLE):
 		return
 	

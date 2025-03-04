@@ -10,7 +10,7 @@ func enter(_msg: Dictionary = {}) -> void:
 	roll_direction = owner.pivot.scale.x
 	owner.play_animation("roll")
 	
-	yield(owner.animated_sprite, "animation_finished")
+	await owner.animated_sprite.animation_finished
 	roll_finished = true
 
 
@@ -19,4 +19,5 @@ func physics_process(_delta: float) -> void:
 		_state_machine.transition_to("Idle")
 		return
 
-	owner.move_and_slide(Vector2(roll_direction * ROLL_SPEED, 0))
+	owner.set_velocity(Vector2(roll_direction * ROLL_SPEED, 0))
+	owner.move_and_slide()

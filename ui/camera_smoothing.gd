@@ -1,11 +1,11 @@
-extends Position2D
+extends Marker2D
 
 var weight := 0.2
 
-onready var player = get_node("../Player")
+@onready var player = get_node("../Player")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not is_instance_valid(player):
 		return
 	

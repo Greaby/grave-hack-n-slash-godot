@@ -9,9 +9,9 @@ func physics_process(_delta: float) -> void:
 		_state_machine.transition_to("Chase")
 		return
 
-	if owner.hit:
+	if owner.is_hit:
 		_state_machine.transition_to("Knockback")
 		return
-	
-	var input_direction = (Global.player.position - owner.position).normalized()
-	owner.pivot.scale.x = input_direction.x
+	if Global.player:
+		var input_direction = (Global.player.position - owner.position).normalized()
+		owner.pivot.scale.x = input_direction.x

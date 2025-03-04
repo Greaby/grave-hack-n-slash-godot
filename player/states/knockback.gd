@@ -1,7 +1,7 @@
 extends State
 
-const KNOCKBACK_SPEED = 400
-var knockback_force
+const KNOCKBACK_SPEED = 400.0
+var knockback_force:float = 0.0
 
 
 func enter(_msg: Dictionary = {}) -> void:
@@ -11,15 +11,17 @@ func enter(_msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
-	owner.hit = false
+	owner.is_hit = false
 
 
 func physics_process(_delta: float) -> void:
-	knockback_force = lerp(knockback_force, 0 , .1)
+	knockback_force = lerpf(knockback_force, 0.0 , 0.1)
 
 	if knockback_force < 1:
 		_state_machine.transition_to("Idle")
 		return
 		
 	owner.pivot.scale.x = owner.hit_direction.x * -1
-	owner.move_and_slide(owner.hit_direction * knockback_force, Vector2.UP)
+	owner.set_velocity(owner.hit_direction * knockback_force)
+	owner.set_up_direction(Vector2.UP)
+	owner.move_and_slide()

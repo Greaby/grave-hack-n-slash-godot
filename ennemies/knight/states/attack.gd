@@ -7,7 +7,7 @@ func enter(_msg: Dictionary = {}) -> void:
 	attack_finished = false
 	owner.play_animation("attack")
 	
-	yield(owner.animated_sprite, "animation_finished")
+	await owner.animated_sprite.animation_finished
 	attack_finished = true
 
 
@@ -16,7 +16,7 @@ func exit() -> void:
 
 
 func physics_process(_delta: float) -> void:
-	if owner.hit:
+	if owner.is_hit:
 		_state_machine.transition_to("Knockback")
 		return
 	

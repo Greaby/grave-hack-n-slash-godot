@@ -6,7 +6,7 @@ func enter(_msg: Dictionary = {}) -> void:
 	attack_finished = false
 	owner.play_animation("attack_two")
 
-	yield(owner.animated_sprite, "animation_finished")
+	await owner.animated_sprite.animation_finished
 	attack_finished = true
 
 
